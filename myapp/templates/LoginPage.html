@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/LoginPage.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="bannari-amman-institute-of-tec-parent">
+        <div class="frame-parent">
+          <div class="bitfulllogo-1-wrapper">
+            <img
+              class="bitfulllogo-1-icon"
+              loading="lazy"
+              alt=""
+              src="./bitfulllogo-1@2x.png"
+            />
+          </div>
+          <div class="bannari-amman-institute-of-tec-wrapper">
+            <b class="bannari-amman-institute-container">
+              <p class="bannari-amman">BANNARI AMMAN</p>
+              <p class="institute-of-technology">INSTITUTE OF TECHNOLOGY</p>
+            </b>
+            <img class="frame-child2" alt="" src="{% static 'images/vector-1.svg' %}" />
+          </div>
+          <div class="header">
+            <div class="portal-title-parent">
+              <div class="portal-title">
+                <img
+                  class="frame-child"
+                  loading="lazy"
+                  alt=""
+                  src="./public/vector-1.svg"
+                />
+              </div>
+              <b class="external-event-management"
+                >External Event Management Portal</b
+              >
+            </div>
+          </div>
+        </div>
+        <div class="basic-courses-parent">
+          <!-- <a class="google-sign-in" href="{% url 'home1' %}">Google Sign In</a> -->
+          <button class="google-sign-in-wrapper" id="bASICCOURSES">
+            <a class="google-sign-in" href="{% url 'home1' %}" style="color: white; text-decoration: none;">Google Sign In</a>
+          </button>
+          <div class="sign-in-with-your-bit-account-wrapper">
+            <b class="sign-in-with">Sign in with your BIT account</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var bASICCOURSES = document.getElementById("bASICCOURSES");
+      if (bASICCOURSES) {
+        bASICCOURSES.addEventListener("click", function (e) {
+          window.location.href = "./Home.html";
+        });
+      }
+      </script>
+  </body>
+</html>

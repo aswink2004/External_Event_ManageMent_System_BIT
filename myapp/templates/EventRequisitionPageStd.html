@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <title>Event Requisition Page</title>
+  
+  <!-- Load CSS Files -->
+  <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/EventRequisitionPageStd.css' %}" />
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" />
+</head>
+
+<body>
+  <div class="even-requistion-page-std">
+    <h1>Requisition Form</h1>
+
+    <!-- Form Starts -->
+    <form action="{% url 'home' %}" method="POST">
+      {% csrf_token %}
+      
+      <!-- Input Fields -->
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required /><br>
+
+      <label for="applicantName">Applicant Name:</label>
+      <input type="text" id="applicantName" name="applicantName" placeholder="Enter your name" required /><br>
+
+      <label for="applicantRollNo">Applicant Roll No:</label>
+      <input type="text" id="applicantRollNo" name="applicantRollNo" placeholder="Enter roll number" required /><br>
+
+      <label for="applicantMail">Applicant Mail ID:</label>
+      <input type="email" id="applicantMail" name="applicantMail" placeholder="Enter email address" required /><br>
+
+      <label for="eventDate">Event Date:</label>
+      <input type="date" id="eventDate" name="eventDate" required /><br>
+
+      <label for="registrationDeadline">Registration Deadline:</label>
+      <input type="date" id="registrationDeadline" name="registrationDeadline" required /><br>
+
+      <label for="eventCategory">Event Category:</label>
+      <input type="text" id="eventCategory" name="eventCategory" placeholder="Enter category (e.g., Workshop)" required /><br>
+
+      <label for="eventLocation">Event Location:</label>
+      <input type="text" id="eventLocation" name="eventLocation" placeholder="Enter location" required /><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" placeholder="Enter city" required /><br>
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" placeholder="Enter state" required /><br>
+
+      <label for="eventType">Event Type:</label>
+      <select id="eventType" name="eventType" required>
+        <option value="offline">Offline</option>
+        <option value="online">Online</option>
+      </select><br>
+
+      <label for="eventOrganizer">Event Organizer:</label>
+      <input type="text" id="eventOrganizer" name="eventOrganizer" placeholder="Enter organizer name" required /><br>
+
+      <!-- Action Buttons -->
+      <!-- Action Buttons -->
+<div class="button-container">
+  <button type="submit" class="add">Submit</button>
+  <a href="{% url 'home' %}" class="cancel1">Cancel</a>
+</div>
+<!-- Popup -->
+<div id="popup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <p>Form submitted successfully!</p>
+  </div>
+</div>
+
+    <!-- Static Images -->
+    <img class="vector-icon16" alt="Decoration" src="{% static 'public/vector-1.svg' %}" />
+    <img class="vector-icon17" alt="Decoration" src="{% static 'public/vector3.svg' %}" />
+    <img class="vector-icon18" alt="Decoration" src="{% static 'public/vector3.svg' %}" />
+  </div>
+  <script>
+    // Add an event listener to the form for the submit event
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Show the popup
+    document.getElementById('popup').style.display = 'flex';
+
+    // Optionally, you can simulate a delay before redirecting
+    setTimeout(function() {
+        // Redirect to the previous page
+        window.history.back();
+    }, 2000); // Adjust the delay as needed (2000 ms = 2 seconds)
+});
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+  </script>
+</body>
+</html>

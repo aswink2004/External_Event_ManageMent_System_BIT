@@ -1,0 +1,201 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc; /* Light background */
+}
+
+.even-requistion-page-std {
+  position: relative;
+  background-color: #2C3E50; /* Dark slategray background */
+  border: 1px solid #000; 
+  box-sizing: border-box;
+  height: 100vh; /* Full height */
+  padding: 40px;
+  color: #ecf0f1; /* Light text color */
+}
+
+/* Heading Styles */
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #ecf0f1;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #34495e; /* Lighter background for form */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+input, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #7f8c8d;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border on focus */
+}
+
+/* Buttons */
+button.add, a.cancel1 {
+  padding: 12px 20px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+button.add {
+  background-color: #1abc9c; /* Teal button */
+  color: #fff;
+  border: none;
+}
+
+button.add:hover {
+  background-color: #16a085; /* Darker teal on hover */
+}
+
+a.cancel1 {
+  background-color: #e74c3c; /* Red cancel button */
+  color: #fff;
+}
+
+a.cancel1:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Aligning Static Images */
+.vector-icon16, .vector-icon17, .vector-icon18 {
+  position: absolute;
+  width: 50px; /* Adjust size */
+  height: auto;
+}
+
+.vector-icon16 {
+  top: 20px;
+  right: 20px;
+}
+
+.vector-icon17 {
+  bottom: 20px;
+  left: 20px;
+}
+
+.vector-icon18 {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Flexbox for Form Elements */
+.even-requistion-page-std-inner, .even-requistion-page-std-child {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.even-requistion-page-std-inner {
+  padding: 15px;
+  background-color: #7f8c8d; /* Gray background for form inputs */
+  border-radius: 6px;
+}
+
+.even-requistion-page-std-child {
+  background-color: #bdc3c7; /* Lighter gray background */
+  padding: 12px;
+  border-radius: 6px;
+  width: 45%;
+}
+
+/* Improve Input Field Alignment and Structure */
+input[type="text"], input[type="email"], input[type="date"], select {
+  font-size: 1em;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #95a5a6;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1em;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #ecf0f1;
+}
+
+/* Improved Layout */
+form {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+form > label, form > input, form > select {
+  grid-column: span 2;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .even-requistion-page-std {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .vector-icon16, .vector-icon17, .vector-icon18 {
+    width: 30px; /* Adjust for mobile view */
+  }
+
+  .add, .cancel1 {
+    font-size: 1em;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 20px; /* Add some space above the buttons */
+  }
+  .popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+  }
+}

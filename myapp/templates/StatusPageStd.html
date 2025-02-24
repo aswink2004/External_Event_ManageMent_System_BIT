@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <!-- Static CSS files -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/StatusPageStd.css' %}" />
+
+    <!-- External Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="status-page-std">
+      <div class="user">User</div>
+      <div class="rectangle-parent">
+        <div class="instance-child"></div>
+        <div class="dashboard">
+          <a style="text-decoration: none; color: rgb(255, 255, 255);" href="{% url 'home1' %}">>Dashboard</a>
+        </div>
+        <!-- Static Image -->
+        <img class="vector-icon" alt="" src="{% static 'images/vector-11.svg' %}" />
+      </div>
+
+      <div class="rectangle-group">
+        <div class="instance-child"></div>
+        <div class="results">Results</div>
+        <img class="vector-icon1" alt="" src="{% static 'images/vector-2.svg' %}" />
+      </div>
+
+      <div class="welcome">Welcome</div>
+      <div class="rectangle-container">
+        <div class="instance-child"></div>
+        <div class="dashboard">Status</div>
+        <!-- Static Image -->
+        <img class="image-10-icon" alt="" src="{% static 'images/image-10@2x.png' %}" />
+      </div>
+
+      <div class="frame-div">
+        <div class="frame-child"></div>
+        <div class="frame-item"></div>
+        <div class="frame-inner"></div>
+        <div class="rectangle-div"></div>
+        <div class="frame-child1"></div>
+        <div class="applied-events">Applied Events</div>
+        <div class="edit">Edit</div>
+        <div class="sno">S.NO</div>
+        <div class="event-name">EVENT NAME</div>
+        <div class="event-date">EVENT DATE</div>
+        <div class="registration-deadline">REGISTRATION DEADLINE</div>
+        <div class="event-organizer">EVENT ORGANIZER</div>
+        <div class="domain">DOMAIN</div>
+        <div class="event-type">EVENT TYPE</div>
+        <div class="event-category">EVENT CATEGORY</div>
+        <div class="event-location">EVENT LOCATION</div>
+        <div class="competition-name">COMPETITION NAME</div>
+        <div class="brochure-details">BROCHURE DETAILS</div>
+        <div class="applied-by">APPLIED BY</div>
+        <div class="applicant-name">APPLICANT NAME</div>
+        <div class="applicant-roll-no">APPLICANT ROLL NO</div>
+        <div class="applicant-department">APPLICANT DEPARTMENT</div>
+        <div class="applicant-year-of">APPLICANT YEAR OF STUDY</div>
+        <div class="applicant-mail-id">APPLICANT MAIL ID</div>
+        <div class="applicant-ph-no">APPLICANT PH NO</div>
+        <div class="event-status">EVENT STATUS</div>
+
+        <!-- Data Row Example -->
+        <div class="div">1</div>
+        <div class="sahaa-2024">SaHaa 2024</div>
+        <div class="skct">SKCT</div>
+        <div class="div1">24/04/24</div>
+        <div class="div2">26/04/24</div>
+        <div class="software">SOFTWARE</div>
+        <div class="offline">OFFLINE</div>
+        <div class="hr">HR</div>
+        <div class="man-of-the">MAN OF THE MATCH</div>
+        <div class="coimbatore">COIMBATORE</div>
+        <div class="link">LINK</div>
+        <div class="student">STUDENT</div>
+        <div class="salmaan-a">Aswin</div>
+        <div class="it241">7376222IT241</div>
+        <div class="it">IT</div>
+        <div class="ii">II</div>
+        <div class="aswinit22bitsathyacin">aswin.it22@bitsathy.ac.in</div>
+        <div class="div3">9345468001</div>
+        <div class="under-progress-wrapper">
+          <b class="under-progress">Under Progress</b>
+        </div>
+        <img class="vector-icon2" alt="" src="{% static 'image/vector.svg' %}" />
+      </div>
+
+      <!-- Footer with links -->
+      <div class="rectangle-parent1">
+        <div class="instance-child"></div>
+        <div class="logout">
+          <a style="text-decoration: none; color: rgb(255, 255, 255);" href="{% url 'login_page' %}">Logout</a>
+        </div>
+        <img class="image-8-icon" alt="" src="{% static 'image/image-8@2x.png' %}" />
+      </div>
+
+      <div class="rectangle-parent2">
+        <div class="instance-child"></div>
+        <div class="dashboard">
+          <a style="text-decoration: none; color: rgb(255, 255, 255);" href="{% url 'IRARegistrationPageStd' %}">IRA</a>
+        </div>
+        <img class="vector-icon3" alt="" src="{% static 'image/vector1.svg' %}" />
+      </div>
+    </div>
+  </body>
+</html>

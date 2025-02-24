@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+.popup-overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+}
+
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-5xl: 24px;
+  --font-size-13xl: 32px;
+  --font-size-5xl-3: 24.3px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+  --color-darkslategray: #20313e;
+  --color-black: #000;
+  --color-lightskyblue: #95caf3;
+  --color-white: #fff;
+  --color-snow: #fdf6f6;
+  --color-lightgray: #dec8c8;
+  --color-lightslategray-200: #5e839f;
+  --color-darkslateblue-100: #30347d;
+  --color-darkslateblue-200: #23265a;
+  --color-silver-100: #b9b9b9;
+  --color-silver-200: #bab6b6;
+  --color-darkgray: #a6a6a6;
+  --color-tomato: #ff6363;
+  --color-cornflowerblue-100: #148ae4;
+  --color-gray-200: rgba(0, 0, 0, 0.4);
+  --color-gray-100: rgba(0, 0, 0, 0.3);
+
+  /* Paddings */
+  --padding-8xs: 5px;
+  --padding-3xs: 10px;
+  --padding-2xl: 21px;
+  --padding-5xl: 24px;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+  --br-62xl: 81px;
+  --br-mini: 15px;
+  --br-smi: 13px;
+  --br-xs: 12px;
+  --br-5xs: 8px;
+}
+.event-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.events-list {
+  margin-top: 20px;
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.event-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Home Page</title>
+
+    <!-- Load CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Home1.css' %}" />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home1">
+      <div class="frame-parent">
+        <div class="frame-group">
+          <div class="filter-wrapper">
+            <b class="filter">Filter</b>
+          </div>
+          <div class="rejected-events-wrapper">
+            <b class="rejected-events">Rejected Events</b>
+          </div>
+          <div class="vector-parent">
+            <img class="vector-icon4" alt="Search Icon" src="{% static 'public/vector-4.svg' %}" />
+            <div class="search">Search</div>
+          </div>
+          <div class="active-mous-wrapper">
+            <div class="rejected-events">Approved Events</div>
+          </div>
+          <div class="create-parent">
+            <b class="create">Create</b>
+            <div class="frame-child3" id="createButton"></div>
+          </div>
+          <div class="frame-child4" id="anotherRectangle"></div>
+        </div>
+        <div class="instance-parent">
+          <div class="parent">
+            <div class="div4">16/07/2021</div>
+            <div class="div5">18/07/2024</div>
+            <div class="something-about-the">Capture the Flag’24</div>
+            <div class="it1">Ramakrishana College, Coimbatore</div>
+            <div class="tcs">TCS</div>
+            <div class="div6">01</div>
+          </div>
+          <div class="it-is-not">It is not a national level event.</div>
+          <div class="expired-on-parent">
+            <div class="expired-on">Expired on</div>
+            <div class="name-of-the">Name of the Event</div>
+            <div class="organization">Organization</div>
+            <div class="reason-for-rejection">Reason for Rejection</div>
+            <div class="started-on">Started On</div>
+            <div class="event-id">Event ID</div>
+          </div>
+        </div>
+      </div>
+      <div class="user1">User</div>
+      <div class="rectangle-parent3">
+        <div class="instance-child3"></div>
+        <div class="logout2" id="logoutButton">Logout</div>
+        <img class="image-8-icon1" alt="User Icon" src="{% static 'public/image-8@2x.png' %}" />
+      </div>
+      <div class="rectangle-parent4">
+        <div class="instance-child3"></div>
+        <div class="dashboard1" id="dashboardButton">Dashboard</div>
+        <img class="vector-icon5" alt="Dashboard Icon" src="{% static 'public/vector-11.svg' %}" />
+      </div>
+      <div class="rectangle-parent5">
+        <div class="instance-child3"></div>
+        <div class="results1">Results</div>
+        <img class="vector-icon6" alt="Results Icon" src="{% static 'public/vector-2.svg' %}" />
+      </div>
+      <div class="rectangle-parent6">
+        <div class="instance-child3"></div>
+        <div class="dashboard1" id="statusButton">Status</div>
+        <img class="image-10-icon1" alt="Status Icon" src="{% static 'public/image-10@2x.png' %}" />
+      </div>
+      <div class="rectangle-parent7">
+        <div class="instance-child3"></div>
+        <div class="dashboard1">IRA</div>
+        <img class="vector-icon7" alt="IRA Icon" src="{% static 'public/vector1.svg' %}" />
+      </div>
+      <div class="external-event-management-syst-parent">
+        <b class="external-event-management1">EXTERNAL EVENT MANAGEMENT SYSTEM</b>
+        <div class="vector-wrapper">
+          <img class="vector-icon8" alt="System Icon" src="{% static 'public/vector.svg' %}" />
+        </div>
+        <img class="frame-icon" alt="Frame Icon" src="{% static 'public/frame-53@2x.png' %}" id="frameImage" />
+        <img class="bitfulllogo-1-icon1" alt="BIT Logo" src="{% static 'public/bitfulllogo-11@2x.png' %}" />
+      </div>
+    </div>
+
+    <div id="frameContainer" class="popup-overlay" style="display: none">
+      <div class="logout-parent" id="popupframeContainer">
+        <b class="logout1">Logout</b>
+      </div>
+    </div>
+
+    <script>
+      const popupframeContainer = document.getElementById("popupframeContainer");
+      if (popupframeContainer) {
+        popupframeContainer.addEventListener("click", function () {
+          window.location.href = "{% url 'login_page' %}";
+        });
+      }
+
+      const createButton = document.getElementById("createButton");
+      if (createButton) {
+        createButton.addEventListener("click", function () {
+          window.location.href = "{% url 'EventRequistionPageStd' %}";
+        });
+      }
+
+      const dashboardButton = document.getElementById("dashboardButton");
+      if (dashboardButton) {
+        dashboardButton.addEventListener("click", function () {
+          window.location.href = "{% url 'home' %}";
+        });
+      }
+
+      const statusButton = document.getElementById("statusButton");
+      if (statusButton) {
+        statusButton.addEventListener("click", function () {
+          window.location.href = "{% url 'status' %}";
+        });
+      }
+
+      const frameImage = document.getElementById("frameImage");
+      if (frameImage) {
+        frameImage.addEventListener("click", function () {
+          const popup = document.getElementById("frameContainer");
+          if (!popup) return;
+          popup.style.display = "flex";
+          popup.style.zIndex = 100;
+          popup.style.backgroundColor = "rgba(113, 113, 113, 0.3)";
+          popup.style.alignItems = "center";
+          popup.style.justifyContent = "center";
+          popup.setAttribute("closable", "");
+        });
+
+        document.addEventListener("click", function (e) {
+          const popup = document.getElementById("frameContainer");
+          if (e.target === popup && popup.hasAttribute("closable")) {
+            popup.style.display = "none";
+          }
+        });
+      }
+
+      const logoutButton = document.getElementById("logoutButton");
+      if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+          window.location.href = "{% url 'login_page' %}";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.logout1 {
+  position: absolute;
+  top: 9px;
+  left: 41px;
+}
+.logout-parent {
+  width: 165px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightslategray-200);
+  height: 47px;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}

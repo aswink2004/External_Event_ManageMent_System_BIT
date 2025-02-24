@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+    />
+    <title>External Event Management System</title>
+  </head>
+  <body>
+    <div class="home">
+      <div class="frame-container">
+        <div class="frame-parent1">
+          <div class="create-group">
+            <div class="create1">
+              <a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'eventrequest' %}">Next</a>
+            </div>
+          </div>
+          <div class="filter-container">
+            <b class="filter1">Filter</b>
+          </div>
+          <div class="approved-events-wrapper">
+            <b class="approved-events">Approved Events</b>
+          </div>
+          <div class="vector-group">
+            <img class="vector-icon11" alt="" src="{% static 'images/vector-4.svg' %}" />
+            <div class="search1">Search</div>
+          </div>
+          <div class="frame-child5" id="rectangle"></div>
+        </div>
+        <div class="frame-parent2">
+          {% for event in events %}
+          <div class="instance-group">
+            <div class="group">
+              <div class="div11">{{ event.start_date }}</div>
+              <div class="div12">{{ event.end_date }}</div>
+              <div class="something-about-the1">{{ event.name }}</div>
+              <div class="it2">{{ event.organization }}</div>
+              <div class="tcs1">{{ event.approved }}</div>
+              <div class="div13">{{ event.id }}</div>
+            </div>
+            <div class="container">
+              <div class="div11">{{ event.start_date }}</div>
+              <div class="div12">{{ event.end_date }}</div>
+              <div class="something-about-the1">{{ event.name }}</div>
+              <div class="it2">{{ event.organization }}</div>
+              <div class="tcs1">{{ event.approved }}</div>
+              <div class="div13">{{ event.id }}</div>
+            </div>
+            <img class="frame-child6" alt="" src="{% static 'images/rectangle-62.svg' %}" id="rectangleIcon" />
+          </div>
+          {% endfor %}
+          <div class="start-date-parent">
+            <div class="start-date">Start Date</div>
+            <div class="end-date">End date</div>
+            <div class="name-of-the1">Name of the event</div>
+            <div class="organization1">Organization</div>
+            <div class="ira2">IRA</div>
+            <div class="event-id1">Event ID</div>
+          </div>
+        </div>
+      </div>
+      <div class="user2">{{ user.username }}</div>
+      <div class="rectangle-parent8">
+        <div class="instance-child8"></div>
+        <div class="logout3">
+          <a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'login_page' %}">Logout</a>
+        </div>
+        <img class="image-8-icon2" alt="" src="{% static 'images/image-8@2x.png' %}" />
+      </div>
+      <div class="rectangle-parent9">
+        <div class="instance-child8"></div>
+        <div class="dashboard2">Dashboard</div>
+        <img class="vector-icon12" alt="" src="{% static 'images/vector-11.svg' %}" />
+      </div>
+      <div class="rectangle-parent10">
+        <div class="instance-child8"></div>
+        <div class="results2">Results</div>
+        <img class="vector-icon13" alt="" src="{% static 'images/vector-2.svg' %}" />
+      </div>
+      <div class="rectangle-parent11">
+        <div class="instance-child8"></div>
+        <div class="dashboard2">
+          <a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'status' %}">Status</a>
+        </div>
+        <img class="image-10-icon2" alt="" src="{% static 'image/image-10@2x.png' %}" />
+      </div>
+      <div class="rectangle-parent12">
+        <div class="instance-child8"></div>
+        <div class="dashboard2">
+          <a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'IRARegistrationPageStd' %}">IRA</a>
+        </div>
+        <img class="vector-icon14" alt="" src="{% static 'images/vector1.svg' %}" />
+      </div>
+      <div class="external-event-management-syst-group">
+        <b class="external-event-management2">EXTERNAL EVENT MANAGEMENT SYSTEM</b>
+        <div class="vector-container">
+          <img class="vector-icon15" alt="" src="{% static 'images/vector.svg' %}" />
+        </div>
+        <img class="frame-child7" alt="" src="{% static 'images/frame-53@2x.png' %}" id="frameImage" />
+        <img class="bitfulllogo-1-icon2" alt="" src="{% static 'images/bitfulllogo-11@2x.png' %}" />
+      </div>
+    </div>
+
+    <div id="frameContainer" class="popup-overlay" style="display: none">
+      <div class="logout-parent" id="popupframeContainer">
+        <b class="logout1">Logout</b>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("rectangle").addEventListener("click", function () {
+        window.location.href = "{% url 'eventrequest' %}";
+      });
+
+      document.getElementById("rectangleIcon").addEventListener("click", function () {
+        window.location.href = "{% url 'IRARegistrationPageStd' %}";
+      });
+
+      document.getElementById("frameImage").addEventListener("click", function () {
+        var popup = document.getElementById("frameContainer");
+        var popupStyle = popup.style;
+        popupStyle.display = "flex";
+        popupStyle.zIndex = 100;
+        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+        popupStyle.alignItems = "center";
+        popupStyle.justifyContent = "center";
+        popup.setAttribute("closable", "");
+
+        popup.addEventListener("click", function (e) {
+          if (e.target === popup && popup.hasAttribute("closable")) {
+            popupStyle.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

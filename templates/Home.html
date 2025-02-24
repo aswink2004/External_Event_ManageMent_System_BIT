@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}" />
+
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+  />
+  </head>
+  <body>
+    <div class="home">
+      <div class="frame-container">
+        <div class="frame-parent1">
+          <div class="create-group">
+            <div class="create1" ><a  style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'home1' %}">Next</a></div>
+            <!-- <img
+              class="rectangle-icon"
+              alt=""
+              src="./public/rectangle-69.svg"
+              id="rectangle"
+            /> -->
+          </div>
+          <div class="filter-container">
+            <b class="filter1">Filter</b>
+          </div>
+          <div class="approved-events-wrapper">
+            <b class="approved-events">Approved Events</b>
+          </div>
+          <div class="vector-group">
+            <img class="vector-icon11" alt="" src="{% static 'images\Vector.png' %}" />
+
+            <div class="search1">Search</div>
+          </div>
+          <div class="expired-mous-wrapper">
+          <!-- <div class="approved-events"><a href="Rejected Events"</a></div> -->
+          </div>
+          <div class="frame-child5" id="rectangle"></div>
+        </div>
+        <div class="frame-parent2">
+          <div class="instance-group">
+            <div class="group">
+              <div class="div11">16/07/2021</div>
+              <div class="div12">18/07/2024</div>
+              <div class="something-about-the1">Yuva’24</div>
+              <div class="it2">Skct.Coimbatore</div>
+              <div class="tcs1">Yes</div>
+              <div class="div13">01</div>
+            </div>
+            <div class="container">
+              <div class="div11">16/07/2021</div>
+              <div class="div12">18/07/2024</div>
+              <div class="something-about-the1">Yuva’24</div>
+              <div class="it2">Skct.Coimbatore</div>
+              <div class="tcs1">Yes</div>
+              <div class="div13">01</div>
+            </div>
+            <img
+              class="frame-child6"
+              alt=""
+              src="./public/rectangle-62.svg"
+              id="rectangleIcon"
+            />
+          </div>
+          <div class="start-date-parent">
+            <div class="start-date">Start Date</div>
+            <div class="end-date">End date</div>
+            <div class="name-of-the1">Name of the event</div>
+            <div class="organization1">Organization</div>
+            <div class="ira2">IRA</div>
+            <div class="event-id1">Event ID</div>
+          </div>
+        </div>
+      </div>
+      <div class="user2">User</div>
+      <div class="rectangle-parent8">
+        <div class="instance-child8"></div>
+        <div class="logout3"><a style= "text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'login_page' %}">Logout</a></div>
+        <img class="image-8-icon2" alt="" src="{% static 'images\image 8.png' %}"/>
+      </div>
+      <div class="rectangle-parent9">
+        <div class="instance-child8"></div>
+        <div class="dashboard2">Dashboard</div>
+        <img class="vector-icon12" alt="" src="{% static 'images\Vector-1.png' %}" />
+      </div>
+      <div class="rectangle-parent10">
+        <div class="instance-child8"></div>
+        <div class="results2">Results</div>
+        <img class="vector-icon13" alt="" src="{% static 'images/vector-2.png' %}" />
+      </div>
+      <div class="rectangle-parent11">
+        <div class="instance-child8"></div>
+        <div  class="dashboard2"><a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'status' %}">Status</a></div>
+        <img class="image-10-icon2" alt="" src="{%static 'images/image 10.png'%}" />
+      </div>
+      <div class="rectangle-parent12">
+        <div class="instance-child8"></div>
+        <div class="dashboard2"><a style="text-decoration: none;color: rgb(255, 255, 255);" href="{% url 'IRARegistrationPageStd' %}">IRA</a></div>
+        <img class="vector-icon14" alt="" src="{% static 'images/vector-3.png' %}"  />
+      </div>
+      <div class="external-event-management-syst-group">
+        <b class="external-event-management2"
+          >EXTERNAL EVENT MANAGEMENT SYSTEM</b
+        >
+        <div class="vector-container">
+          <img class="vector-icon15" alt="" src="{% static 'images/vector-4.png' %}" />
+        </div>
+        <img
+          class="frame-child7"
+          alt=""
+          src="{% static 'images/frame 53.png' %}" 
+          id="frameImage"
+        />
+
+        <img
+          class="bitfulllogo-1-icon2"
+          alt=""
+          src="{% static 'images/bitFulllogo 1.png' %}"
+        />
+      </div>
+    </div>
+
+    <div id="frameContainer" class="popup-overlay" style="display: none">
+      <div class="logout-parent" id="popupframeContainer">
+        <b class="logout1">Logout</b>
+      </div>
+    </div>
+
+    <script>
+      var popupframeContainer = document.getElementById("popupframeContainer");
+      if (popupframeContainer) {
+        popupframeContainer.addEventListener("click", function (e) {
+         window.location.href = "{% url 'login_page' %}"
+        });
+      }
+      
+      var rectangle = document.getElementById("rectangle");
+      if (rectangle) {
+        rectangle.addEventListener("click", function (e) {
+          window.location.href = "{% url 'EventRequisitionPageStd' %}";
+        });
+      }
+      
+      var rectangle = document.getElementById("rectangle");
+      if (rectangle) {
+        rectangle.addEventListener("click", function (e) {
+          window.location.href = "{% url 'home1' %}";
+        });
+      }
+      
+      var rectangleIcon = document.getElementById("rectangleIcon");
+      if (rectangleIcon) {
+        rectangleIcon.addEventListener("click", function (e) {
+          window.location.href = "{% url 'IRARegistrationPageStd'%}"         });
+      }
+      const statusButton = document.getElementById("statusButton");
+      if (statusButton) {
+        statusButton.addEventListener("click", function () {
+          window.location.href = "{% url 'status' %}";
+        });
+      }
+      
+      var frameImage = document.getElementById("frameImage");
+      if (frameImage) {
+        frameImage.addEventListener("click", function () {
+          var popup = document.getElementById("frameContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+      
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      </script>
+  </body>
+</html>
